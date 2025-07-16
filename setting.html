@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>⚙️Settings - Hirequest</title>
+  <link rel="stylesheet" href="styles.css" />
+   <link rel="icon"href="thunder-icon-emoji-vector.jpg" type="image/jpeg">
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet" />
+</head>
+<body class="settings-page">
+  <!-- Navigation (reuse your nav from dashboard if needed) -->
+  <nav class="navbar">
+    <div class="nav-container">
+      <div class="nav-logo">
+        <i class="fas fa-briefcase"></i>
+      <span>⚡︎ Hirequest</span>
+      </div>
+      <div class="nav-menu">
+        <a href="dashboard.html" class="nav-link"><i class="fas fa-home"></i><span>Home</span></a>
+      </div>
+    </div>
+  </nav>
+  <!-- Main Settings Content -->
+  <main class="main-content settings-content">
+    <h1>⚙️Account Settings</h1>
+    <div class="settings-container">
+      <!-- Profile Information -->
+      <section class="settings-section">
+        <h2><i class="fas fa-user"></i> Profile Info</h2>
+        <form class="settings-form">
+          <label for="fullName">Full Name</label>
+          <input type="text" id="fullName" placeholder="enter name" />
+          <label for="email">Email</label>
+          <input type="email" id="email" placeholder="your email@example.com" />
+          <label for="phone">Phone Number</label>
+          <input type="tel" id="phone" placeholder="enter mobile number" />
+          <button class="save-btn">Save Changes</button>
+        </form>
+      </section>
+      <!-- Password Change -->
+      <section class="settings-section">
+        <h2><i class="fas fa-lock"></i> Change Password</h2>
+        <form class="settings-form">
+          <label for="currentPass">Current Password</label>
+          <input type="password" id="currentPass" placeholder="••••••••" />
+          <label for="newPass">New Password</label>
+          <input type="password" id="newPass" placeholder="••••••••" />
+          <label for="confirmPass">Confirm New Password</label>
+          <input type="password" id="confirmPass" placeholder="••••••••" />
+          <button class="save-btn">Update Password</button>
+        </form>
+      </section>
+      <!-- Notification Settings -->
+      <section class="settings-section">
+        <h2><i class="fas fa-bell"></i> Notifications</h2>
+        <form class="settings-form">
+          <label><input type="checkbox" checked /> Job recommendations</label>
+          <label><input type="checkbox" checked /> New job alerts</label>
+          <label><input type="checkbox" /> Newsletter</label>
+          <button class="save-btn">Update Preferences</button>
+        </form>
+      </section>
+    </div>
+  </main>
+  <script src="script.js"></script>
+  <script>
+    const emailInput = document.getElementById("email");
+    const storedEmail = localStorage.getItem("userEmail");
+    if (storedEmail && emailInput) {
+        emailInput.value = storedEmail;
+    }
+</script>
+</body>
+</html>

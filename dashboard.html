@@ -1,0 +1,287 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hirequest-dashboard</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="icon"href="thunder-icon-emoji-vector.jpg" type="image/jpeg">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+</head>
+<body class="dashboard-page">
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="nav-logo">
+                <i class="fas fa-briefcase"></i>
+                <span> ⚡︎ Hirequest</span>
+            </div>
+            <div class="nav-menu" id="nav-Menu">
+                <a href="#" class="nav-link active" data-section="home">
+                    <i class="fas fa-home"></i>
+                    <span>Home</span>
+                </a>
+                <a href="#" class="nav-link" data-section="jobs">
+                    <i class="fas fa-briefcase"></i>
+                    <span>Jobs</span>
+                </a>
+                <a href="#" class="nav-link" data-section="location">
+                    <i class="fas fa-map-marker-alt"></i>
+                    <span>Location</span>
+                </a>
+                <a href="#" class="nav-link" data-section="skills">
+                    <i class="fas fa-bolt"></i>
+                    <span>Skills</span>
+                </a>
+                <a href="#" class="nav-link" data-section="companies">
+                    <i class="fas fa-building"></i>
+                    <span>Companies</span>
+                </a>
+            </div>
+            <div class="nav-profile">
+                <div class="profile-dropdown">
+                    <button class="profile-btn" onclick="toggleProfileDropdown()">
+                        <i class="fas fa-user"></i>
+                        <span>Profile</span>
+                        <i class="fas fa-chevron-down"></i>
+                    </button>
+                    <div class="dropdown-menu" id="profileDropdown">
+                        <div class="dropdown-header">
+                            <p>Signed in as</p>
+                            <p id="userEmail">user@example.com</p>
+                        </div>
+                        <a href="setting.html" class="dropdown-item">
+                            <i class="fas fa-cog"></i>
+                            Settings
+                        </a>
+                        <a href="#" class="dropdown-item">
+                            <i class="fas fa-file-alt"></i>
+                            My Applications
+                        </a>
+                        <a href="#" class="dropdown-item">
+                            <i class="fas fa-heart"></i>
+                            Saved Jobs
+                        </a>
+                        <hr>
+                        <a href="#" class="dropdown-item logout" onclick="logout()">
+                            <i class="fas fa-sign-out-alt"></i>
+                            Logout
+                        </a>
+                    </div>
+                </div>
+            </div>
+            <div class="mobile-menu-toggle" onclick="toggleMobileMenu()">
+                <i class="fas fa-bars"></i>
+            </div>
+        </div>
+    </nav>
+    <!-- Main Content -->
+    <main class="main-content">
+        <!-- Home Section -->
+        <section id="home" class="content-section active">
+            <!-- Hero Section -->
+            <div class="hero-section">
+                <div class="hero-content">
+                    <h1>Find Your Dream Job</h1>
+                    <p>Discover thousands of opportunities from top companies worldwide</p>
+                    <div class="search-bar">
+                        <div class="search-input">
+                            <i class="fas fa-search"></i>
+                            <input type="text" placeholder="Job title, keywords, or company" id="searchInput">
+                        </div>
+                        <button class="search-btn">Search</button>
+                    </div>
+                </div>
+            </div>
+            <!-- Stats Section -->
+            <div class="stats-section">
+                <div class="stat-card">
+                    <i class="fas fa-briefcase"></i>
+                    <h3>10,000+</h3>
+                    <p>Active Jobs</p>
+                </div>
+                <div class="stat-card">
+                    <i class="fas fa-building"></i>
+                    <h3>5,000+</h3>
+                    <p>Companies</p>
+                </div>
+                <div class="stat-card">
+                    <i class="fas fa-users"></i>
+                    <h3>50,000+</h3>
+                    <p>Job Seekers</p>
+                </div>
+                <div class="stat-card">
+                    <i class="fas fa-star"></i>
+                    <h3>95%</h3>
+                    <p>Success Rate</p>
+                </div>
+            </div>
+            <!-- Featured Jobs -->
+            <div class="featured-jobs">
+                <h2>Featured Jobs</h2>
+                <div class="jobs-grid" id="featuredJobsGrid">
+                    <!-- Jobs will be populated by JavaScript -->
+                </div>
+            </div>
+        </section>
+        <!-- Jobs Section -->
+        <section id="jobs" class="content-section">
+            <div class="section-header">
+                <h1>All Jobs</h1>
+                <div class="section-controls">
+                    <button class="filter-btn">
+                        <i class="fas fa-filter"></i>
+                        Filters
+                    </button>
+                    <select class="sort-select">
+                        <option>Sort by: Newest</option>
+                        <option>Sort by: Salary</option>
+                        <option>Sort by: Relevance</option>
+                    </select>
+                </div>
+            </div>
+            <div class="jobs-grid" id="allJobsGrid">
+                <!-- Jobs will be populated by JavaScript -->
+            </div>
+        </section>
+        <!-- Location Section -->
+        <section id="location" class="content-section">
+            <h1>Jobs by Location</h1>
+            <div class="location-grid">
+                <div class="location-card">
+                    <div class="location-emoji">🗽</div>
+                    <h3>New York</h3>
+                    <p>2,500+ jobs available</p>
+                    <div class="location-stats">
+                        <span>Avg Salary: $95k</span>
+                        <span>Top: Tech, Finance</span>
+                    </div>
+                </div>
+                <div class="location-card">
+                    <div class="location-emoji">🌉</div>
+                    <h3>San Francisco</h3>
+                    <p>3,200+ jobs available</p>
+                    <div class="location-stats">
+                        <span>Avg Salary: $120k</span>
+                        <span>Top: Tech, Startups</span>
+                    </div>
+                </div>
+                <div class="location-card">
+                    <div class="location-emoji">🌍</div>
+                    <h3>Remote</h3>
+                    <p>1,800+ jobs available</p>
+                    <div class="location-stats">
+                        <span>Avg Salary: $85k</span>
+                        <span>Top: Tech, Marketing</span>
+                    </div>
+                </div>
+                <div class="location-card">
+                    <div class="location-emoji">🏛️</div>
+                    <h3>London</h3>
+                    <p>1,500+ jobs available</p>
+                    <div class="location-stats">
+                        <span>Avg Salary: £65k</span>
+                        <span>Top: Finance, Tech</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!-- Skills Section -->
+        <section id="skills" class="content-section">
+            <h1>Skills in Demand</h1>
+            <div class="skills-grid">
+                <div class="skill-category">
+                    <h3><span class="skill-emoji">💻</span> Programming</h3>
+                    <div class="skill-tags">
+                        <span class="skill-tag">JavaScript</span>
+                        <span class="skill-tag">Python</span>
+                        <span class="skill-tag">React</span>
+                        <span class="skill-tag">Node.js</span>
+                        <span class="skill-tag">Java</span>
+                    </div>
+                </div>
+                <div class="skill-category">
+                    <h3><span class="skill-emoji">🎨</span> Design</h3>
+                    <div class="skill-tags">
+                        <span class="skill-tag">UI/UX Design</span>
+                        <span class="skill-tag">Figma</span>
+                        <span class="skill-tag">Adobe Creative Suite</span>
+                        <span class="skill-tag">Sketch</span>
+                    </div>
+                </div>
+                <div class="skill-category">
+                    <h3><span class="skill-emoji">📊</span> Data</h3>
+                    <div class="skill-tags">
+                        <span class="skill-tag">Machine Learning</span>
+                        <span class="skill-tag">SQL</span>
+                        <span class="skill-tag">Python</span>
+                        <span class="skill-tag">Tableau</span>
+                        <span class="skill-tag">R</span>
+                    </div>
+                </div>
+                <div class="skill-category">
+                    <h3><span class="skill-emoji">📱</span> Marketing</h3>
+                    <div class="skill-tags">
+                        <span class="skill-tag">Digital Marketing</span>
+                        <span class="skill-tag">SEO</span>
+                        <span class="skill-tag">Social Media</span>
+                        <span class="skill-tag">Analytics</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!-- Companies Section -->
+        <section id="companies" class="content-section">
+            <h1>Top Companies</h1>
+            <div class="companies-grid">
+                <div class="company-card">
+                    <div class="company-emoji">🚀</div>
+                    <h3>TechCorp</h3>
+                    <p>Leading technology solutions</p>
+                    <div class="company-stats">
+                        <span>150+ jobs</span>
+                        <span>4.8★ rating</span>
+                    </div>
+                </div>
+                <div class="company-card">
+                    <div class="company-emoji">🎨</div>
+                    <h3>DesignStudio</h3>
+                    <p>Creative design agency</p>
+                    <div class="company-stats">
+                        <span>45+ jobs</span>
+                        <span>4.6★ rating</span>
+                    </div>
+                </div>
+                <div class="company-card">
+                    <div class="company-emoji">📊</div>
+                    <h3>DataFlow</h3>
+                    <p>Data analytics platform</p>
+                    <div class="company-stats">
+                        <span>80+ jobs</span>
+                        <span>4.7★ rating</span>
+                    </div>
+                </div>
+                <div class="company-card">
+                    <div class="company-emoji">🏦</div>
+                    <h3>FinanceMax</h3>
+                    <p>Financial services</p>
+                    <div class="company-stats">
+                        <span>120+ jobs</span>
+                        <span>4.5★ rating</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+    <!-- Job Detail Modal -->
+    <div id="jobModal" class="modal">
+        <div class="modal-content">
+            <span class="close" onclick="closeJobModal()">&times;</span>
+            <div id="jobModalContent">
+                <!-- Job details will be populated by JavaScript -->
+            </div>
+        </div>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>

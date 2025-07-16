@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>⚡Hirequest - LinkedIn Login</title>
+  <link rel="stylesheet" href="styles.css" />
+  <link rel="icon" href="yellow-thunder.png" type="image/png" />
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet" />
+  <style>
+    body {
+      font-family: 'Inter', sans-serif;
+      background: #f3f6fa;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+    }
+
+    .linkedin-card {
+      background: #ffffff;
+      padding: 30px 40px;
+      border-radius: 15px;
+      box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1);
+      text-align: center;
+      width: 100%;
+      max-width: 400px;
+    }
+
+    .linkedin-card h1 {
+      margin-bottom: 20px;
+    }
+
+    .linkedin-btn {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 10px;
+      background-color: #0077b5;
+      color: white;
+      border: none;
+      padding: 12px;
+      font-size: 16px;
+      font-weight: 500;
+      border-radius: 8px;
+      cursor: pointer;
+      width: 100%;
+    }
+
+    .linkedin-btn i {
+      font-size: 18px;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="linkedin-card">
+    <h1>Sign in with LinkedIn</h1>
+    
+    <a class="linkedin-btn" href="https://www.linkedin.com/oauth/v2/authorization?response_type=code&client_id=YOUR_CLIENT_ID&redirect_uri=YOUR_REDIRECT_URI&scope=r_liteprofile%20r_emailaddress&state=123456">
+      <i class="fab fa-linkedin"></i> Continue with LinkedIn
+    </a>
+
+    <p style="margin-top: 20px; font-size: 14px;">You'll be redirected to LinkedIn to authorize access.</p>
+  </div>
+
+</body>
+</html>
